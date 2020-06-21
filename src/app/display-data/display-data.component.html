@@ -1,0 +1,25 @@
+  
+<button>
+    <a mat-button routerLink="/user">
+   Add Post</a>
+</button>
+
+<mat-card class="example-card"*ngFor="let dem of dataSource " >
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{dem.name}}</mat-card-title>
+        <mat-card-subtitle>{{dem.title}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{dem.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+          {{dem.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-fab color="warn" aria-label="Example icon button with a delete icon" 
+        (click)="deleteUser(dataSource)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
